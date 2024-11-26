@@ -1,21 +1,353 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Header */
+header {
+  background-color: #E2F5FB; /* Light blue background */
+  padding: 1rem;
+  text-align: center;
+  color: #333; /* Default text color */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Features Section */
+.features {
+  padding: 2rem;
+  background-color: #17414F;
+  color: #fff; 
+  text-align: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 items in a single row */
+  gap: 1.5rem; /* Space between items */
+}
+
+.feature-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  font-size: 1.2rem;
+  color: #17414F;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Better Ingredients Section */
+.better-ingredients {
+  padding: 2rem;
+  text-align: center;
+  background: #e8f7fc;
+}
+
+.better-ingredients h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.better-ingredients p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.ingredient-card {
+  background: #fff;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.ingredient-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.ingredient-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.ingredient-card p {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.see-more {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #003f63;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.see-more:hover {
+  background: #005780;
+}
+
+/* Footer */
+footer {
+  background-color: #17414F; /* Dark teal background */
+  color: #fff; /* White text for contrast */
+  padding: 2rem;
+  text-align: center;
+}
+
+footer p {
+  font-size: 1rem;
+  color: #fff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ingredients-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@media (max-width: 480px) {
+  .features-grid,
+  .ingredients-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  color: #17414F;
+  gap: 3rem;
+  background-image: url('/probiotics.png'); /* Background image */
+  background-size: 800px;
+  background-position: center;
+  height: 400px; /* Fixed height for hero section */
+}
+
+.hero-content {
+  flex: 1;
+  text-align: left;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-button {
+  padding: 1rem 2rem;
+  background-color: #17414F;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.hero-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-left,
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+}
+
+.hero-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.hero-left-image,
+.hero-right-image {
+  max-width: 150%;
+  margin-bottom: 1rem;
+}
+
+.hero-left-text,
+.hero-right-text {
+  text-align: center;
+}
+
+.hero-left-image img,
+.hero-right-image img {
+  max-width: 150px; /* Resize images */
+}
+
+.hero-left h3,
+.hero-right h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-left p,
+.hero-right p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Latest News Section */
+.latest-news {
+  background-color: #f4f4f4;
+  padding: 2rem;
+  text-align: center;
+}
+
+.latest-news h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.news-items {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.news-item {
+  width: 30%;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.news-item img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.news-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.news-item p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Responsive adjustments for Latest News */
+@media (max-width: 768px) {
+  .news-items {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .news-item {
+    width: 100%;
+  }
+}
+/* Footer */
+.footer {
+  background-color: #17414F; /* Dark teal background */
+  color: #fff; /* White text for contrast */
+  padding: 2rem;
+  text-align: center;
+}
+
+.contact-info {
+  margin-bottom: 2rem;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  color: #fff;
+}
+
+/* Contact Details Section */
+.contact-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 30%;
+  min-width: 200px;
+}
+
+.contact-item .contact-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.contact-item .contact-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-item .contact-text p {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.contact-item p {
+  font-size: 1rem;
+}
+
+/* Responsive Adjustments for Contact Items */
+@media (max-width: 768px) {
+  .contact-details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-item {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
 }
